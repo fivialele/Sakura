@@ -47,9 +47,11 @@ namespace Microsoft.BotBuilderSamples
             // The Dialog that will be run by the bot.
             services.AddSingleton<RootDialog>();
 
-            // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            //services.AddTransient<IBot, QnABot<RootDialog>>(); //reads from qna's answers
-            services.AddTransient<IBot, LuisSample.MyLuisSample>(); // reads from luis
+            // Create the bot as a transient. In this case the ASP Controller is expecting an IBot. 
+            services.AddTransient<IBot, LuisSample.MyLuisSample>();
+            System.Console.WriteLine("Got here");
+            //services.AddTransient<IBot, QnABot<RootDialog>>();
+            //System.Console.WriteLine("Got here");
 
         }
 

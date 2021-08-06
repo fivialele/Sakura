@@ -26,7 +26,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
         public RootDialog(IBotServices services, IConfiguration configuration)
             : base("root")
         {
-            AddDialog(new QnAMakerBaseDialog(services, configuration));
+            AddDialog(new QnAMakerBaseDialog(services, configuration)); //here the qnaMakerBaseDialog is called
 
             AddDialog(new WaterfallDialog(InitialDialog)
                .AddStep(InitialStepAsync));

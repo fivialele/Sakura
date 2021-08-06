@@ -38,7 +38,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
 
         protected async override Task<IQnAMakerClient> GetQnAMakerClientAsync(DialogContext dc)
         {
-            return this._services?.QnAMakerService;
+            return  this._services?.QnAMakerService;
         }
 
         protected override Task<QnAMakerOptions> GetQnAMakerOptionsAsync(DialogContext dc)
@@ -53,7 +53,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
             });
         }
 
-        protected async override Task<QnADialogResponseOptions> GetQnAResponseOptionsAsync(DialogContext dc)
+        protected async Task<QnADialogResponseOptions> GetQnAResponseOptionsAsync(DialogContext dc)
         {
             var noAnswer = (Activity)Activity.CreateMessageActivity();
             noAnswer.Text = this._configuration["DefaultAnswer"] ?? DefaultNoAnswer;
