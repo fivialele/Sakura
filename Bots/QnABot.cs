@@ -22,7 +22,7 @@ namespace Microsoft.BotBuilderSamples.Bots
         {
             ConversationState = conversationState;
             UserState = userState;
-            Dialog = dialog;
+            Dialog = dialog; // a root dialog
         }
 
         public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default)
